@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILA Store | المنتجات</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Floating AI Button -->
+    <button class="ai-floating-btn">
+        <i class="fas fa-sparkles"></i>
+    </button>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>سلة المشتريات</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>المجموع الفرعي</span>
+                <span id="subtotal">0 ج.م</span>
+            </div>
+            <div class="summary-row">
+                <span>الشحن</span>
+                <span id="shippingCost">65 ج.م</span>
+            </div>
+            <div class="summary-row total">
+                <span>الإجمالي</span>
+                <span id="totalPrice">65 ج.م</span>
+            </div>
+            <button class="btn btn-primary checkout-btn">إتمام الطلب</button>
+        </div>
+    </aside>
+
+    <!-- Sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar"><i class="fas fa-times"></i></button>
+        <div class="sidebar-logo">
+            <span class="logo-text">SILA <span class="logo-store-text">STORE</span></span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html#new-arrivals">وصول حديثاً 2026</a>
+            <a href="index.html#best-sellers">الأكثر مبيعاً</a>
+            <a href="category.html?type=women">قسم النساء</a>
+            <a href="category.html?type=men">قسم الرجال</a>
+        </nav>
+    </aside>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-right">
+            <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+            <div class="logo">
+                <a href="index.html" class="logo-text">SILA <span class="logo-store-text">STORE</span></a>
+            </div>
+        </div>
+        <div class="header-center">
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="ابحث بذكاء بـ AI...">
+                <span class="search-badge">AI SEARCH</span>
+            </div>
+        </div>
+        <div class="header-left">
+            <button class="icon-btn theme-toggle"><i class="far fa-sun"></i> <span class="theme-text">LIGHT</span></button>
+            <button class="icon-btn cart-btn-header" id="cartBtn">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-badge" id="cartBadge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="category-header">
+            <h1 class="category-title" id="catTitle">جميع المنتجات</h1>
+            <div class="title-underline"></div>
+        </div>
+
+        <section class="section">
+            <div class="products-grid" id="catGrid">
+                <!-- Products will be injected by JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">SILA <span class="text-gold">GLOBAL</span></div>
+                <p>نحن نؤمن أن الإكسسوار ليس مجرد زينة، بل هو امتداد للروح وجسر يعبر عن طموحك. في عام 2026 نسعى لتكون الوجهة الأولى لكل باحث عن التفرد.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col links-col">
+                <h3>عن الشركة</h3>
+                <ul>
+                    <li><a href="about.html">من نحن</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">&copy; SILA STORE 2026 - جميع الحقوق محفوظة لعلامتنا التجارية المميزة</div>
+            <div class="footer-bottom-links">
+                <a href="#">PRIVACY</a>
+                <a href="#">TERMS</a>
+                <span class="ar-en text-gold">AR / 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const type = urlParams.get('type');
+            
+            const titleEl = document.getElementById('catTitle');
+            const gridEl = document.getElementById('catGrid');
+
+            const allProducts = [
+                { id: 1, name: "سوار الياقوت - فضي", price: 950, img: "bracelet_silver.png", cat: "women" },
+                { id: 2, name: "قلادة الأميرة - ذهبي", price: 3890, img: "necklace_gold.png", cat: "women" },
+                { id: 3, name: "ساعة SILA ملوكي - ذهبي", price: 2450, img: "watch_gold.png", cat: "men" },
+                { id: 4, name: "أقراط اللؤلؤ - ذهبي", price: 720, img: "earrings_gold.png", cat: "women" },
+                { id: 5, name: "نظارة ONYX السوداء", price: 1650, img: "sunglasses_black.png", cat: "men" },
+                { id: 6, name: "خاتم الفارس - فضي", price: 1250, img: "ring_silver.png", cat: "men" }
+            ];
+
+            let displayProducts = allProducts;
+            
+            if (type === 'women') {
+                titleEl.textContent = 'قسم النساء';
+                displayProducts = allProducts.filter(p => p.cat === 'women');
+            } else if (type === 'men') {
+                titleEl.textContent = 'قسم الرجال';
+                displayProducts = allProducts.filter(p => p.cat === 'men');
+            }
+
+            displayProducts.forEach(p => {
+                const badgeText = p.cat === 'women' ? 'WOMEN COLLECTION' : 'MEN COLLECTION';
+                const html = `
+                    <div class="product-card" style="cursor:pointer;" onclick="window.location.href='product.html?id=${p.id}'">
+                        <div class="product-image">
+                            <span class="badge badge-gold">NEW 2026</span>
+                            <img src="${p.img}" alt="${p.name}">
+                        </div>
+                        <div class="product-info">
+                            <span class="category">${badgeText}</span>
+                            <h3 class="product-name">${p.name}</h3>
+                            <div class="product-footer">
+                                <div class="price"><span class="currency">ج.م</span> ${p.price}</div>
+                                <button class="add-to-cart-btn" data-id="${p.id}" data-name="${p.name}" data-price="${p.price}" data-img="${p.img}" onclick="event.stopPropagation(); window.addToCart('${p.id}', '${p.name}', ${p.price}, '${p.img}', 1);"><i class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                gridEl.insertAdjacentHTML('beforeend', html);
+            });
+        });
+    </script>
+</body>
+</html>

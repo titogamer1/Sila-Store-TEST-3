@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SILA Store | متجر الإكسسوارات الفاخرة</title>
+    <meta name="description" content="اكتشف عالم الإكسسوارات الفاخرة من SILA STORE.">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Outfit:wght@700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Floating AI Button -->
+    <button class="ai-floating-btn">
+        <i class="fas fa-sparkles"></i>
+    </button>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>سلة المشتريات</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>المجموع الفرعي</span>
+                <span id="subtotal">0 ج.م</span>
+            </div>
+            <div class="summary-row">
+                <span>الشحن</span>
+                <span id="shippingCost">65 ج.م</span>
+            </div>
+            <div class="summary-row total">
+                <span>الإجمالي</span>
+                <span id="totalPrice">65 ج.م</span>
+            </div>
+            <button class="btn btn-primary checkout-btn">إتمام الطلب</button>
+        </div>
+    </aside>
+
+    <!-- Sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar"><i class="fas fa-times"></i></button>
+        <div class="sidebar-logo">
+            <span class="logo-text">SILA <span class="logo-store-text">STORE</span></span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html#new-arrivals">وصول حديثاً 2026</a>
+            <a href="index.html#best-sellers">الأكثر مبيعاً</a>
+            <a href="category.html?type=women">قسم النساء</a>
+            <a href="category.html?type=men">قسم الرجال</a>
+        </nav>
+    </aside>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-right">
+            <button class="menu-btn" id="menuBtn"><i class="fas fa-bars"></i></button>
+            <div class="logo">
+                <a href="index.html" class="logo-text">SILA <span class="logo-store-text">STORE</span></a>
+            </div>
+        </div>
+        <div class="header-center">
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="ابحث بذكاء بـ AI...">
+                <span class="search-badge">AI SEARCH</span>
+            </div>
+        </div>
+        <div class="header-left">
+            <button class="icon-btn theme-toggle"><i class="far fa-sun"></i> <span
+                    class="theme-text">LIGHT</span></button>
+            <button class="icon-btn cart-btn-header" id="cartBtn">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-badge" id="cartBadge">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text-box">
+                    <span class="badge">PREMIUM ACCESSORIES</span>
+                    <h1 class="hero-title">PURE<br><span class="text-gold">ELEGANCE</span></h1>
+                    <p class="hero-desc">اكتشف عالم الإكسسوارات الفاخرة من SILA STORE، حيث نصمم لك القطع التي تعزز حضورك
+                        وتبرز شخصيتك الفريدة، سواء كنت تبحث عن الأناقة الذهبية أو الرقي الفضي.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="window.location.href='index.html#new-arrivals'">تصفح التشكيلة</button>
+                        <button class="btn btn-secondary" onclick="window.location.href='category.html?type=women'">القسم النسائي</button>
+                        <button class="btn btn-secondary" onclick="window.location.href='category.html?type=men'">القسم الرجالي</button>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="hero_graphic.png" alt="Pure Elegance Star" id="heroGraphic">
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals -->
+        <section class="section" id="new-arrivals">
+            <div class="section-header">
+                <h2 class="section-title">وصول حديثاً <span class="text-gold">2026</span></h2>
+                <a href="category.html?type=women" class="see-all">+ SEE ALL COLLECTIONS</a>
+            </div>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=1'" style="cursor: pointer;">
+                    <div class="product-image">
+                        <span class="badge badge-gold">NEW 2026</span>
+                        <img src="bracelet_silver.png" alt="سوار الياقوت">
+                    </div>
+                    <div class="product-info">
+                        <span class="category">WOMEN COLLECTION</span>
+                        <h3 class="product-name">سوار الياقوت - فضي</h3>
+                        <div class="product-footer">
+                            <div class="price"><span class="currency">ج.م</span> 950</div>
+                            <button class="add-to-cart-btn" data-id="1" data-name="سوار الياقوت - فضي" data-price="950"
+                                data-img="bracelet_silver.png"><i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=2'" style="cursor: pointer;">
+                    <div class="product-image">
+                        <span class="badge badge-gold">NEW 2026</span>
+                        <img src="necklace_gold.png" alt="قلادة الأميرة">
+                    </div>
+                    <div class="product-info">
+                        <span class="category">WOMEN COLLECTION</span>
+                        <h3 class="product-name">قلادة الأميرة - ذهبي</h3>
+                        <div class="product-footer">
+                            <div class="price"><span class="currency">ج.م</span> 3890</div>
+                            <button class="add-to-cart-btn" data-id="2" data-name="قلادة الأميرة - ذهبي"
+                                data-price="3890" data-img="necklace_gold.png"><i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card" onclick="window.location.href='product.html?id=3'" style="cursor: pointer;">
+                    <div class="product-image">
+                        <span class="badge badge-gold">NEW 2026</span>
+                        <img src="watch_gold.png" alt="ساعة SILA">
+                    </div>
+                    <div class="product-info">
+                        <span class="category">MEN COLLECTION</span>
+                        <h3 class="product-name">ساعة SILA ملوكي - ذهبي</h3>
+                        <div class="product-footer">
+                            <div class="price"><span class="currency">ج.م</span> 2450</div>
+                            <button class="add-to-cart-btn" data-id="3" data-name="ساعة SILA ملوكي - ذهبي"
+                                data-price="2450" data-img="watch_gold.png"><i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Sellers -->
+        <section class="section" id="best-sellers">
+            <div class="section-header-center">
+                <h2 class="section-title">الأكثر مبيعاً</h2>
+                <p class="section-subtitle">منتجات وثق بها أكثر من 10,000 عميل في 2026</p>
+            </div>
+            <div class="best-sellers-grid">
+                <!-- Best Seller 1 -->
+                <div class="best-seller-card" onclick="window.location.href='product.html?id=4'"
+                    style="cursor: pointer;">
+                    <div class="bs-info">
+                        <span class="badge badge-outline"><i class="fas fa-star"></i> BEST SELLER</span>
+                        <h3 class="product-name">أقراط اللؤلؤ - ذهبي</h3>
+                        <p class="bs-desc">أقراط كلاسيكية من اللؤلؤ الطبيعي مع قاعدة ذهبية تضفي لمسة من الرقة والجمال.
+                        </p>
+                        <div class="product-footer">
+                            <div class="price text-gold"><span class="currency">ج.م</span> 720</div>
+                            <button class="add-to-cart-btn" data-id="4" data-name="أقراط اللؤلؤ - ذهبي" data-price="720"
+                                data-img="earrings_gold.png"><i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="bs-image">
+                        <img src="earrings_gold.png" alt="أقراط اللؤلؤ">
+                    </div>
+                </div>
+                <!-- Best Seller 2 -->
+                <div class="best-seller-card" onclick="window.location.href='product.html?id=5'"
+                    style="cursor: pointer;">
+                    <div class="bs-info">
+                        <span class="badge badge-outline"><i class="fas fa-star"></i> BEST SELLER</span>
+                        <h3 class="product-name">نظارة ONYX السوداء</h3>
+                        <p class="bs-desc">نظارة شمسية بإطار معدني قوي وعدسات مستقطبة تحمي عينيك بأناقة.</p>
+                        <div class="product-footer">
+                            <div class="price text-gold"><span class="currency">ج.م</span> 1650</div>
+                            <button class="add-to-cart-btn" data-id="5" data-name="نظارة ONYX السوداء" data-price="1650"
+                                data-img="sunglasses_black.png"><i class="fas fa-cart-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="bs-image">
+                        <img src="sunglasses_black.png" alt="نظارة ONYX">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Women & Men Sections Row -->
+        <div class="categories-row">
+            <!-- Women -->
+            <section class="section half-section" id="women">
+                <div class="section-header-center">
+                    <h2 class="section-title">قسم النساء</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="products-grid-2">
+                    <div class="product-card simple-card" onclick="window.location.href='product.html?id=2'"
+                        style="cursor: pointer;">
+                        <img src="necklace_gold.png" alt="قلادة الأميرة">
+                        <div class="product-info">
+                            <h3 class="product-name">قلادة الأميرة - ذهبي</h3>
+                            <div class="product-footer">
+                                <div class="price text-gold"><span class="currency">ج.م</span> 3890</div>
+                                <button class="add-to-cart-btn" data-id="2" data-name="قلادة الأميرة - ذهبي"
+                                    data-price="3890" data-img="necklace_gold.png"><i
+                                        class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card simple-card" onclick="window.location.href='product.html?id=1'"
+                        style="cursor: pointer;">
+                        <img src="bracelet_silver.png" alt="سوار الياقوت">
+                        <div class="product-info">
+                            <h3 class="product-name">سوار الياقوت - فضي</h3>
+                            <div class="product-footer">
+                                <div class="price text-gold"><span class="currency">ج.م</span> 950</div>
+                                <button class="add-to-cart-btn" data-id="1" data-name="سوار الياقوت - فضي"
+                                    data-price="950" data-img="bracelet_silver.png"><i
+                                        class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card simple-card" onclick="window.location.href='product.html?id=4'"
+                        style="cursor: pointer;">
+                        <img src="earrings_gold.png" alt="أقراط اللؤلؤ">
+                        <div class="product-info">
+                            <h3 class="product-name">أقراط اللؤلؤ - ذهبي</h3>
+                            <div class="product-footer">
+                                <div class="price text-gold"><span class="currency">ج.م</span> 720</div>
+                                <button class="add-to-cart-btn" data-id="4" data-name="أقراط اللؤلؤ - ذهبي"
+                                    data-price="720" data-img="earrings_gold.png"><i
+                                        class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Men -->
+            <section class="section half-section" id="men">
+                <div class="section-header-center">
+                    <h2 class="section-title">قسم الرجال</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="products-grid-2">
+                    <div class="product-card simple-card" onclick="window.location.href='product.html?id=3'"
+                        style="cursor: pointer;">
+                        <img src="watch_gold.png" alt="ساعة SILA">
+                        <div class="product-info">
+                            <h3 class="product-name">ساعة SILA ملوكي - ذهبي</h3>
+                            <div class="product-footer">
+                                <div class="price text-gold"><span class="currency">ج.م</span> 2450</div>
+                                <button class="add-to-cart-btn" data-id="3" data-name="ساعة SILA ملوكي - ذهبي"
+                                    data-price="2450" data-img="watch_gold.png"><i
+                                        class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card simple-card" onclick="window.location.href='product.html?id=6'"
+                        style="cursor: pointer;">
+                        <img src="ring_silver.png" alt="خاتم الفارس">
+                        <div class="product-info">
+                            <h3 class="product-name">خاتم الفارس - فضي</h3>
+                            <div class="product-footer">
+                                <div class="price text-gold"><span class="currency">ج.م</span> 1250</div>
+                                <button class="add-to-cart-btn" data-id="6" data-name="خاتم الفارس - فضي"
+                                    data-price="1250" data-img="ring_silver.png"><i
+                                        class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card simple-card" onclick="window.location.href='product.html?id=5'"
+                        style="cursor: pointer;">
+                        <img src="sunglasses_black.png" alt="نظارة ONYX">
+                        <div class="product-info">
+                            <h3 class="product-name">نظارة ONYX السوداء</h3>
+                            <div class="product-footer">
+                                <div class="price text-gold"><span class="currency">ج.م</span> 1650</div>
+                                <button class="add-to-cart-btn" data-id="5" data-name="نظارة ONYX السوداء"
+                                    data-price="1650" data-img="sunglasses_black.png"><i
+                                        class="fas fa-cart-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">SILA <span class="text-gold">GLOBAL</span></div>
+                <p>نحن نؤمن أن الإكسسوار ليس مجرد زينة، بل هو امتداد للروح وجسر يعبر عن طموحك. في عام 2026 نسعى لتكون
+                    الوجهة الأولى لكل باحث عن التفرد.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-col links-col">
+                <h3>عن الشركة</h3>
+                <ul>
+                    <li><a href="about.html">من نحن</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">&copy; SILA STORE 2026 - جميع الحقوق محفوظة لعلامتنا التجارية المميزة</div>
+            <div class="footer-bottom-links">
+                <a href="#">PRIVACY</a>
+                <a href="#">TERMS</a>
+                <span class="ar-en text-gold">AR / 2026</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
